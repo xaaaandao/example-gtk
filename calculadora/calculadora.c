@@ -8,6 +8,14 @@ char operacao[100];
 float primeiro_numero;
 bool limpar_display = FALSE;
 
+void usar_estilo(){
+    GtkCssProvider *css_provider = gtk_css_provider_new();
+    // False -> para não mostrar mensagem de erro
+    gtk_css_provider_load_from_path(css_provider, "static/estilo_calculadora.css", FALSE);
+    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(),
+                                            GTK_STYLE_PROVIDER(css_provider),
+                                            GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+}
 
 float ler_display(){
     const gchar *string = gtk_entry_get_text(display);
@@ -128,6 +136,7 @@ int main(int argc, char *argv[]){
 
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
 
+    usar_estilo();
     gtk_widget_show_all(window);
     gtk_main();
 

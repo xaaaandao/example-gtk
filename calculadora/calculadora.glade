@@ -2,6 +2,11 @@
 <!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">static/images/raiz-quadrada.png</property>
+  </object>
   <object class="GtkWindow" id="main_window">
     <property name="can_focus">False</property>
     <child type="titlebar">
@@ -197,8 +202,7 @@
             </child>
             <child>
               <object class="GtkButton" id="botao_soma">
-                <property name="label" translatable="yes">+</property>
-                <property name="name">bota_soma_um</property>
+                <property name="name">botao_soma_1</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -268,11 +272,12 @@
             </child>
             <child>
               <object class="GtkButton" id="botao_raiz_quadrada">
-                <property name="label" translatable="yes">.</property>
                 <property name="name">digito</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">image1</property>
+                <property name="always_show_image">True</property>
                 <signal name="clicked" handler="on_botao_raiz_quadrada_clicked" swapped="no"/>
               </object>
               <packing>
@@ -283,7 +288,7 @@
             <child>
               <object class="GtkButton" id="botao_reset">
                 <property name="label" translatable="yes">RESET</property>
-                <property name="name">digito</property>
+                <property name="name">botao_reset</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
